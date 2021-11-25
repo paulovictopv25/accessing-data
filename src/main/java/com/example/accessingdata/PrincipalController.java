@@ -1,7 +1,9 @@
 package com.example.accessingdata;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller //Significa que esta classe é um controlador
 @RequestMapping(path = "/demo") // Significa que as URLs começam com demo (após o caminho do aplicativo)
-
+@CrossOrigin(origins = "*")
 public class PrincipalController {
 
     @Autowired // faz o start do nosso objeto ( uRepository)
@@ -34,7 +36,7 @@ public class PrincipalController {
     @GetMapping(path = "/all")
     public @ResponseBody Iterable<Usuario> getAllUsuario(){
 
-        return uRepository.findAll();
+        return uRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
 
     @PutMapping(path = "/update/{id}")
