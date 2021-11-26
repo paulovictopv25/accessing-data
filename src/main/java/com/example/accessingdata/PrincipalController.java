@@ -35,7 +35,7 @@ public class PrincipalController {
 
     @GetMapping(path = "/all")
     public @ResponseBody Iterable<Usuario> getAllUsuarios() {
-        return uRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
+        return uRepository.findAll(Sort.by(Sort.Direction.ASC, "id")); 
     }
 
     @PutMapping(path = "/update/{id}")
