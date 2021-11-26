@@ -34,8 +34,7 @@ public class PrincipalController {
     }
 
     @GetMapping(path = "/all")
-    public @ResponseBody Iterable<Usuario> getAllUsuario(){
-
+    public @ResponseBody Iterable<Usuario> getAllUsuarios() {
         return uRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
 
