@@ -13,10 +13,7 @@ public class Usuario{
     private Integer id;
     private String nome;
     private String email;
-    private String status;
-    private String local;
-    private String inicioPrevisto;
-    private String inicioCirurgia;
+   
 
         
     public Integer getId() {
@@ -46,37 +43,4 @@ public class Usuario{
         this.email = email;
     }
 
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    public String getLocal() {
-        return local;
-    }
-    public void setLocal(String local) {
-        this.local = local;
-    }
-    public String getInicioPrevisto() {
-        return inicioPrevisto;
-    }
-    public void setInicioPrevisto(String inicioPrevisto) {
-        this.inicioPrevisto = inicioPrevisto;
-    }
-    public String getInicioCirurgia() {
-        return inicioCirurgia;
-    }
-    public void setInicioCirurgia(String inicioCirurgia) {
-        this.inicioCirurgia = inicioCirurgia;
-    }
-    public String getSaidaPrevista() {
-        return saidaPrevista;
-    }
-    public void setSaidaPrevista(String saidaPrevista) {
-        this.saidaPrevista = saidaPrevista;
-    }
-    private String saidaPrevista;
-
-    
 }
