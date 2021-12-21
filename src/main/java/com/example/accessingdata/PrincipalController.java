@@ -25,11 +25,18 @@ public class PrincipalController {
     @PostMapping(path = "/add")
     public @ResponseBody String addNovoUsuario(@RequestParam String nome, @RequestParam String email) {
 
-        Usuario u = new Usuario();
-        u.setNome(nome);
-        u.setEmail(email);
-        uRepository.save(u);
-             return "Ok ao Gravar";
+        try {
+            Usuario u = new Usuario();
+            u.setNome(nome);
+            u.setEmail(email);
+            uRepository.save(u);
+                 return "Ok ao Gravar";
+        } catch (Exception e) {
+            
+            return e.getMessage();
+        }
+
+       
 
     }
 
