@@ -25,14 +25,18 @@ public class PrincipalController {
     @PostMapping(path = "/add")
     public @ResponseBody String addNovoUsuario(@RequestParam String nome, @RequestParam String email) {
 
+        if(uRepository.findByEmail(email) != null){
+            return "O E-mail digitado já existe.";
+        }
+
+
         try {
             Usuario u = new Usuario();
             u.setNome(nome);
             u.setEmail(email);
             uRepository.save(u);
-                 return "Ok ao Gravar";
+            return "Ok ao Gravar";
         } catch (Exception e) {
-            
             return e.getMessage();
         }
 
