@@ -29,7 +29,7 @@ public class PrincipalController {
             return "O E-mail digitado já existe.";
         }
 
-
+       
         try {
             Usuario u = new Usuario();
             u.setNome(nome);
